@@ -18,14 +18,13 @@ ul, li {
   display: block;
   margin: 0;
   padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
 }
 
 section {
@@ -128,6 +127,8 @@ input[type='submit'] {
 
 .main-container img {
   box-shadow: 0 -10px 40px 0 rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  width: auto;
 }
 
 .features-container {
@@ -421,12 +422,14 @@ header {
   justify-content: center;
   background-color: #000000;
   text-align: center;
-  height: 89px;
+  min-height: 89px;
   margin-bottom: 102px;
 }
 
 nav {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav > a {
@@ -450,7 +453,6 @@ nav > a:hover {
   flex-direction: column;
   align-items: flex-start;
   width: 50%;
-  min-width: 500px;
   vertical-align: top;
 }
 
@@ -521,7 +523,7 @@ main > img {
 }
 
 footer {
-  height: 110px;
+  min-height: 110px;
   line-height: 32px;
   color: #B8B8B8;
   background-color: #313030;
@@ -533,7 +535,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 32px;
+  min-height: 32px;
   /* margin: 48px auto 0; */
 }
 
@@ -553,8 +555,14 @@ footer {
     padding-right: 1vw;
   }
 
+  .main-container .container {
+    justify-content: center;
+  }
+
   .leader {
     margin-bottom: 100px;
+    width: auto;
+    max-width: 500px;
   }
 
   .button-contact, .features-button {
@@ -628,6 +636,10 @@ footer {
     padding-right: 16px;
   }
 
+  .main-container {
+    padding-top: 0;
+  }
+
   .subscribe-container .container {
     flex-direction: column;
     align-items: center;
@@ -654,15 +666,30 @@ footer {
     padding: 0 16px;
   }
 
-  .contact-main-container input:nth-child(-n+2) {
-    width: auto;
+  .contact-main-container input:nth-child(-n+2), .contact-main-container textarea {
+    width: 100%;
   }
 
   .contact-main-container form {
     flex-direction: column;
   }
 
-  .footer-container {
-    flex-direction: column;
+  .features-items ul {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .features-items li:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  h1 span {
+    word-break: break-all;
   }
 }

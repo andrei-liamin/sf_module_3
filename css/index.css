@@ -225,7 +225,7 @@ input[type='submit'] {
 .team-member-pic {
   width: 320px;
   height: 460px;
-  background-color: #B8B8B8;
+  background-color: #f4ad99;
   margin-right: 64px;
 }
 
@@ -263,10 +263,11 @@ input[type='submit'] {
 }
 
 .team-members .member {
+  position: relative;
   width: 200px;
   height: 210px;
   margin-top: 18px;
-  background-color: #B8B8B8;
+  background-color: #e9edf2;
 }
 
 .member:not(:last-child) {
@@ -278,7 +279,7 @@ input[type='submit'] {
 }
 
 .member:hover h5 {
-  display: inline-block;
+  display: block;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -543,7 +544,7 @@ footer {
   height: 32px;
 }
 
-.footer-social-links a {
+.footer-social-links a:nth-child(n+2) {
   margin-left: 18px;
 }
 
@@ -691,5 +692,13 @@ footer {
 
   h1 span {
     word-break: break-all;
+  }
+
+  .footer-container {
+    justify-content: center;
+  }
+
+  .footer-copyright {
+    margin-bottom: 12px;
   }
 }
